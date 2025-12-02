@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Simple Quiz</title>
+
+</head>
+<body class="min-h-screen bg-gray-100 flex-row items-center justify-center space-y-10 p-6">
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">What is the capital of Ghana?</h2>
+
+    <form action="#" class="space-y-2">
+        <label for="Kumasi" class="flex items-center space-x-2">
+            <input type="radio" id="Kumasi" name="capital" value="Kumasi" class="accent-blue-600"> Kumasi </label>
+        </label>
+        <label for="Accra" class="flex items-center space-x-2">
+            <input type="radio" id="Accra" name="capital" value="Accra" class="accent-blue-600"> Accra </label>
+        </label>
+        <label for="Tamale" class="flex items-center space-x-2">
+            <input type="radio" id="Tamale" name="capital" value="Tamale" class="accent-blue-600"> Tamale </label>
+        <label for="CapeCoast" class="flex items-center space-x-2">
+            <input type="radio" id="CapeCoast" name="capital" value="Cape Coast" class="accent-blue-600"> Cape Coast </label>
+        </label><br>
+            <input id="submitBtn" type="name" value="Submit Answer" class="mt-4 w-full bg-blue-600 text-white text-center py-2 rounded hover:bg-blue-700 transition">
+        <p id="result" class="mt-4 font-medium"></p>
+        </form>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">What region is Gold extracted in Ghana ?</h2>
+
+    <form action="#" class="space-y-2">
+        <label for="greateraaccra" class="flex items-center space-x-2">
+            <input type="radio" id="greateraaccra" name="region" value="greateraccra" class="accent-blue-600"> Greater Accra </label>
+        </label>
+        <label for="northenregion" class="flex items-center space-x-2">
+            <input type="radio" id="northenregion" name="region" value="northenregion" class="accent-blue-600"> Northen Region </label>
+        </label>
+        <label for="centralregion" class="flex items-center space-x-2">
+            <input type="radio" id="centralregion" name="region" value="centralregion" class="accent-blue-600"> Central Region </label>
+        <label for="easternregion" class="flex items-center space-x-2">
+            <input type="radio" id="easternregion" name="region" value="easternregion" class="accent-blue-600"> Eastern Region </label>
+        </label><br>
+            <input id="submitBtn1" type="name" value="Submit Answer" class="mt-4 w-full bg-blue-600 text-white text-center py-2 rounded hover:bg-blue-700 transition">
+        <p id="result1" class="mt-4 font-medium"></p>
+        </form>
+    </div>
+    
+
+
+    <!-- JavaScript to handle the quiz logic -->
+    <script>
+        const submitBtn = document.getElementById("submitBtn");
+        const result = document.getElementById("result");
+
+        submitBtn.addEventListener("click", function () {
+            const capital = document.querySelector('input[name="capital"]:checked');
+            if (!capital) {
+                result.textContent = "Please choose an answer!";
+                result.className = "mt-4 font-medium text-red-600";
+                return;
+            }
+            if (capital.value === "Accra") {
+                result.textContent = "Correct!";
+                result.className = "mt-4 font-medium text-green-600";
+            } else {
+                result.textContent = "Wrong! The correct answer is Accra.";
+                result.className = "mt-4 font-medium text-red-600";
+            }
+        });
+
+        const submitBtn1 = document.getElementById("submitBtn1");
+        const result1 = document.getElementById("result1");
+
+        submitBtn1.addEventListener("click", function () {
+            const region = document.querySelector('input[name="region"]:checked');
+            if (!region) {
+                result1.textContent = "Please choose an answer!";
+                result1.className = "mt-4 font-medium text-red-600";
+                return;
+            }
+            if (region.value === "centralregion") {
+                result1.textContent = "Correct!";
+                result1.className = "mt-4 font-medium text-green-600";
+            } else {
+                result1.textContent = "Wrong! The correct answer is Accra.";
+                result1.className = "mt-4 font-medium text-red-600";
+            }
+        });
+    </script>
+</body>
+</html>
